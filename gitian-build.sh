@@ -75,9 +75,9 @@ COIN=${VGITIAN_COIN:-bitcoin-abc}
 SIGNER=${VGITIAN_SIGNER:-"notconfiguredgitian@mazacoin.org"}
 VERSION=${VGITIAN_VERSION:-0.14.6}
 commit=${VGITIAN_COMMIT:-false}
-url=${VGITIAN_URL:-"https://github.com/bitcoin-abc/bitcoin-abc"}
-sigrepo=${VGITIAN_SIGREPO:-"https://github.com/bitcoin-core/gitian.sigs"}
-detachedsigrepo=${VGITIAN_DETACHEDSIGREPO:-"https://github.com/bitcoin-core/detached-sigs"}
+url=${VGITIAN_URL:-"https://github.com/kech1004/Kcoin"}
+sigrepo=${VGITIAN_SIGREPO:-"https://github.com/kech1004/Kcoin.sigs"}
+detachedsigrepo=${VGITIAN_DETACHEDSIGREPO:-"https://github.com/ech1004/Kcoin/detached-sigs"}
 proc=${VGITIAN_PROC:-3}
 mem=${VGITIAN_MEM:-3500}
 lxc=true
@@ -309,7 +309,7 @@ echo "${COMMIT}"
 if [[ $setup = true ]]
 then
     sudo apt-get install ruby apache2 git apt-cacher-ng python-vm-builder qemu-kvm qemu-utils
-    #git clone https://github.com/bitcoin-core/gitian.sigs.git
+    #git clone https://github.com/kech1004/gitian.sigs.git
     git clone "$sigrepo" repos/"${COIN}"-gitian.sigs
     git clone "$detachedsigrepo" repos/"${COIN}"-detached-sigs
     git clone https://github.com/devrandom/gitian-builder.git
